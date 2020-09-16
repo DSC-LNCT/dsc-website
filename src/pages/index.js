@@ -5,19 +5,18 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
+import "../styles/global.scss"
+import Hero from "../components/Hero"
+
 const IndexPage = ({ data }) => {
   const { title, description } = data.markdownRemark.frontmatter
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <p>Now go build something great.</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
+      <Hero title={title} description={description} />
+      <div style={{ maxWidth: `30px`, marginBottom: `1.45rem` }}>
+        {/* <Image /> */}
       </div>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
     </Layout>
   )
 }
@@ -28,6 +27,13 @@ export const query = graphql`
       frontmatter {
         title
         description
+        cta {
+          url
+          text
+        }
+        image {
+          publicURL
+        }
       }
     }
   }

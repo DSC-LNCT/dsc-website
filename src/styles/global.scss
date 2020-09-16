@@ -1,0 +1,80 @@
+@import "./setup/normalize";
+@import "./setup/variables";
+@import "./setup/mixins";
+@import "./setup/typography";
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: $background-color;
+  color: $font-color;
+  main {
+    flex: 1;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__container {
+    // background-color: pink;
+    // position: fixed;
+    top: 0;
+    padding-top: 1.5rem;
+    width: 100%;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    z-index: 1;
+    // &--solid {
+    //   background-color: pink;
+    //   padding-top: 0;
+    //   box-shadow: 0 1px 20px 0 rgba(46, 61, 73, 0.2);
+    // }
+  }
+}
+.navbar {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+    li {
+      margin: 0 2em;
+
+      a {
+        font-size: 1rem;
+        color: $font-color;
+        font-weight: $medium;
+        position: relative;
+        transition: transform 2s ease-in-out;
+      }
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  animation: $animation;
+  h1 {
+    margin-block-end: 0;
+    font-size: 3rem;
+  }
+  p {
+    max-width: 500px;
+    font-size: $medium;
+    line-height: 1.25;
+    padding: 30px 0;
+  }
+}

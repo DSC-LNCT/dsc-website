@@ -1,0 +1,22 @@
+$background-color: #08192b;
+$primary-color: #4ad295;
+$font-color: #edf2f5;
+$secondary-color: #06121e;
+
+$regular: 400;
+$medium: 500;
+$bold: 700;
+
+$animation: fadeInAnimation 1s;
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
